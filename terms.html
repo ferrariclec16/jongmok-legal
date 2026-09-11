@@ -1,0 +1,228 @@
+<title>그냥1분 이용약관</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#FBFAF7; --panel:#FFFFFF; --ink:#16224A; --body:#2C3557;
+    --muted:#5C6480; --rule:#E4E1D8; --accent:#B8860B; --chip:#F4EFE0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0F1425; --panel:#151B30; --ink:#E9ECF6; --body:#C8CDE0;
+      --muted:#8B93AD; --rule:#283153; --accent:#FFD54A; --chip:#1E2540;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0F1425; --panel:#151B30; --ink:#E9ECF6; --body:#C8CDE0;
+    --muted:#8B93AD; --rule:#283153; --accent:#FFD54A; --chip:#1E2540;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--ground); color:var(--body);
+    font-family:"IBM Plex Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:16px; line-height:1.72;
+  }
+  .wrap{max-width:50rem; margin:0 auto; padding:3rem 1.5rem 5rem}
+  header{border-bottom:2px solid var(--ink); padding-bottom:1.25rem; margin-bottom:2.5rem}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--muted); margin:0 0 .5rem;
+  }
+  h1{
+    font-family:"Noto Serif KR",Georgia,serif; font-weight:700; color:var(--ink);
+    font-size:clamp(1.6rem,4vw,2.15rem); line-height:1.25; margin:0; text-wrap:balance;
+  }
+  .sub{margin:.6rem 0 0; color:var(--muted); font-size:.95rem}
+  .meta{display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; margin-top:1rem;
+        font-family:"IBM Plex Mono",monospace; font-size:.78rem; color:var(--muted)}
+  h2{
+    font-family:"Noto Serif KR",Georgia,serif; font-weight:700; color:var(--ink);
+    font-size:1.18rem; line-height:1.4; margin:2.75rem 0 .75rem; text-wrap:balance;
+    display:flex; gap:.7rem; align-items:baseline;
+  }
+  h2 .n{
+    font-family:"IBM Plex Mono",monospace; font-size:.8rem; font-weight:500;
+    color:var(--accent); flex:none; padding-top:.15rem;
+  }
+  p{margin:0 0 .9rem}
+  ul{margin:0 0 .9rem; padding-left:1.15rem}
+  li{margin:.3rem 0}
+  code{
+    font-family:"IBM Plex Mono",monospace; font-size:.86em;
+    background:var(--chip); color:var(--ink); padding:.12em .38em; border-radius:3px;
+  }
+  .note{
+    background:var(--panel); border-left:3px solid var(--accent);
+    padding:1rem 1.1rem; margin:1.5rem 0; font-size:.94rem;
+  }
+  .note strong{color:var(--ink)}
+  .divider{
+    margin:4rem 0 2.5rem; border:0; border-top:1px solid var(--rule);
+    position:relative; text-align:center;
+  }
+  .divider span{
+    position:relative; top:-.78rem; background:var(--ground); padding:0 1rem;
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--muted);
+  }
+  footer{
+    margin-top:4rem; padding-top:1.25rem; border-top:1px solid var(--rule);
+    font-size:.85rem; color:var(--muted);
+  }
+  a{color:var(--accent); text-decoration:underline; text-underline-offset:2px}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .todo{color:var(--accent); font-weight:600}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Terms of Service · 이용약관</p>
+    <h1>그냥1분 Publishing Tool</h1>
+    <p class="sub">Terms for the internal tool that delivers our finished videos to our own TikTok drafts.</p>
+    <div class="meta">
+      <span>Effective 2026-09-11</span>
+      <span>Internal use only</span>
+    </div>
+  </header>
+
+  <h2><span class="n">01</span> Scope</h2>
+  <p>
+    These terms cover the 그냥1분 Publishing Tool ("the Tool"), a private script operated by
+    our team. The Tool is used only by the operators of the TikTok accounts it posts to. It is
+    not offered to the public and has no registration.
+  </p>
+
+  <h2><span class="n">02</span> What the Tool does</h2>
+  <p>
+    The Tool takes a video file we produced, attaches a title and hashtags we prepared, and
+    delivers it to the authorized account's TikTok drafts. The account owner then reviews the
+    draft in the TikTok app and decides whether and how to publish it — including its
+    visibility, comment settings, and any commercial-content disclosure.
+  </p>
+  <div class="note">
+    <strong>The Tool never publishes on its own.</strong> It requests only
+    <code>user.info.basic</code> and <code>video.upload</code>. It does not request
+    <code>video.publish</code>, so it cannot post directly to a public feed.
+  </div>
+
+  <h2><span class="n">03</span> Authorization</h2>
+  <p>
+    Before the Tool can deliver anything, the account owner must authorize it through TikTok's
+    own login screen. Authorization can be withdrawn at any time in the TikTok app under
+    <em>Settings and privacy → Security and permissions → Manage app permissions</em>.
+    Once withdrawn, the Tool can no longer access that account.
+  </p>
+
+  <h2><span class="n">04</span> Content responsibility</h2>
+  <p>
+    All videos delivered by the Tool are produced by us and remain our responsibility. We are
+    responsible for making sure each video complies with TikTok's Community Guidelines and
+    Terms of Service before it is published. Because publishing is a human step, the person who
+    presses publish is the one who confirms the content is ready.
+  </p>
+
+  <h2><span class="n">05</span> Acceptable use</h2>
+  <ul>
+    <li>The Tool is used only for accounts we own or are explicitly authorized to operate.</li>
+    <li>It is not used to post on behalf of anyone who has not authorized it.</li>
+    <li>It is not used for spam, bulk automated posting to unrelated accounts, or engagement manipulation.</li>
+    <li>It is not used to bypass any TikTok limit, review, or restriction.</li>
+  </ul>
+
+  <h2><span class="n">06</span> Relationship to TikTok</h2>
+  <p>
+    The Tool uses TikTok's Login Kit and Content Posting API and is bound by TikTok's Developer
+    Terms of Service. We are not affiliated with, endorsed by, or acting on behalf of TikTok.
+    If TikTok's terms and these terms ever conflict, TikTok's terms apply.
+  </p>
+
+  <h2><span class="n">07</span> Availability and liability</h2>
+  <p>
+    The Tool is provided as-is for our own operations. It may stop working if TikTok changes its
+    API, if a token expires, or if we stop maintaining it. We make no warranty of availability
+    and accept no liability toward third parties, since the Tool is not offered to third parties.
+  </p>
+
+  <h2><span class="n">08</span> Changes</h2>
+  <p>
+    If what the Tool does or what it accesses changes, these terms are updated and the effective
+    date at the top changes with them.
+  </p>
+
+  <h2><span class="n">09</span> Contact</h2>
+  <p>
+    Questions about these terms:
+    <a href="mailto:ferraric.lec16@gmail.com">ferraric.lec16@gmail.com</a>
+  </p>
+
+  <hr class="divider"><span class="divider">한국어</span>
+
+  <h2><span class="n">01</span> 적용 범위</h2>
+  <p>
+    이 약관은 「그냥1분 업로드 도구」(이하 「도구」)에 적용됩니다. 도구는 우리 팀이 운영하는
+    내부용 스크립트이며, 영상을 올리는 틱톡 계정의 운영자만 사용합니다. 일반에 공개되지 않고
+    회원가입도 없습니다.
+  </p>
+
+  <h2><span class="n">02</span> 도구가 하는 일</h2>
+  <p>
+    우리가 제작한 영상 파일에 미리 준비한 제목과 해시태그를 붙여, 승인된 계정의 틱톡
+    <strong>초안</strong>으로 전달합니다. 그 뒤 계정 주인이 틱톡 앱에서 초안을 확인하고
+    공개 여부·댓글 설정·상업 콘텐츠 표시 등을 직접 정해 게시합니다.
+  </p>
+  <div class="note">
+    <strong>도구가 스스로 게시하지 않습니다.</strong> 요청하는 권한은
+    <code>user.info.basic</code>과 <code>video.upload</code> 둘뿐입니다.
+    <code>video.publish</code>는 요청하지 않으므로 공개 피드에 직접 올릴 수 없습니다.
+  </div>
+
+  <h2><span class="n">03</span> 승인</h2>
+  <p>
+    도구가 무엇이든 전달하기 전에, 계정 주인이 틱톡의 로그인 화면에서 직접 승인해야 합니다.
+    승인은 틱톡 앱의 <em>설정 및 개인정보 → 보안 및 권한 → 앱 권한 관리</em>에서 언제든
+    취소할 수 있고, 취소하면 도구는 그 계정에 더 이상 접근할 수 없습니다.
+  </p>
+
+  <h2><span class="n">04</span> 콘텐츠 책임</h2>
+  <p>
+    도구가 전달하는 영상은 모두 우리가 제작한 것이며 책임도 우리에게 있습니다. 각 영상이
+    틱톡 커뮤니티 가이드라인과 이용약관을 지키는지 게시 전에 확인할 책임은 우리에게 있습니다.
+    게시는 사람이 누르는 단계이므로, 게시를 누르는 사람이 그 영상이 준비됐음을 확인합니다.
+  </p>
+
+  <h2><span class="n">05</span> 허용되는 사용</h2>
+  <ul>
+    <li>우리가 소유하거나 명시적으로 운영을 위임받은 계정에만 사용합니다.</li>
+    <li>승인하지 않은 사람을 대신해 게시하지 않습니다.</li>
+    <li>스팸, 무관한 계정에 대한 대량 자동 게시, 참여도 조작에 사용하지 않습니다.</li>
+    <li>틱톡의 제한·심사·정책을 우회하는 데 사용하지 않습니다.</li>
+  </ul>
+
+  <h2><span class="n">06</span> 틱톡과의 관계</h2>
+  <p>
+    도구는 틱톡의 Login Kit 과 Content Posting API 를 사용하며 틱톡 개발자 약관을 따릅니다.
+    우리는 틱톡과 제휴 관계가 아니고, 틱톡의 보증을 받거나 틱톡을 대리하지 않습니다.
+    틱톡 약관과 이 약관이 충돌하면 틱톡 약관이 우선합니다.
+  </p>
+
+  <h2><span class="n">07</span> 가용성과 책임</h2>
+  <p>
+    도구는 우리 운영을 위해 있는 그대로 제공됩니다. 틱톡이 API 를 변경하거나 토큰이
+    만료되거나 우리가 유지를 중단하면 작동이 멈출 수 있습니다. 가용성을 보증하지 않으며,
+    제3자에게 제공하는 도구가 아니므로 제3자에 대한 책임도 지지 않습니다.
+  </p>
+
+  <h2><span class="n">08</span> 변경</h2>
+  <p>
+    도구가 하는 일이나 접근 범위가 바뀌면 이 약관을 갱신하고 위쪽 시행일도 함께 바꿉니다.
+  </p>
+
+  <h2><span class="n">09</span> 문의</h2>
+  <p>
+    이 약관에 대한 문의:
+    <a href="mailto:ferraric.lec16@gmail.com">ferraric.lec16@gmail.com</a>
+  </p>
+
+  <footer>
+    그냥1분 Publishing Tool · Terms of Service · Effective 2026-09-11
+  </footer>
+</div>

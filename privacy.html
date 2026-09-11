@@ -1,0 +1,269 @@
+<title>그냥1분 개인정보처리방침</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#FBFAF7; --panel:#FFFFFF; --ink:#16224A; --body:#2C3557;
+    --muted:#5C6480; --rule:#E4E1D8; --accent:#B8860B; --chip:#F4EFE0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0F1425; --panel:#151B30; --ink:#E9ECF6; --body:#C8CDE0;
+      --muted:#8B93AD; --rule:#283153; --accent:#FFD54A; --chip:#1E2540;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0F1425; --panel:#151B30; --ink:#E9ECF6; --body:#C8CDE0;
+    --muted:#8B93AD; --rule:#283153; --accent:#FFD54A; --chip:#1E2540;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--ground); color:var(--body);
+    font-family:"IBM Plex Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:16px; line-height:1.72;
+  }
+  .wrap{max-width:50rem; margin:0 auto; padding:3rem 1.5rem 5rem}
+  header{border-bottom:2px solid var(--ink); padding-bottom:1.25rem; margin-bottom:2.5rem}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--muted); margin:0 0 .5rem;
+  }
+  h1{
+    font-family:"Noto Serif KR",Georgia,serif; font-weight:700; color:var(--ink);
+    font-size:clamp(1.6rem,4vw,2.15rem); line-height:1.25; margin:0; text-wrap:balance;
+  }
+  .sub{margin:.6rem 0 0; color:var(--muted); font-size:.95rem}
+  .meta{display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; margin-top:1rem;
+        font-family:"IBM Plex Mono",monospace; font-size:.78rem; color:var(--muted)}
+  h2{
+    font-family:"Noto Serif KR",Georgia,serif; font-weight:700; color:var(--ink);
+    font-size:1.18rem; line-height:1.4; margin:2.75rem 0 .75rem; text-wrap:balance;
+    display:flex; gap:.7rem; align-items:baseline;
+  }
+  h2 .n{
+    font-family:"IBM Plex Mono",monospace; font-size:.8rem; font-weight:500;
+    color:var(--accent); flex:none; padding-top:.15rem;
+  }
+  p{margin:0 0 .9rem}
+  ul{margin:0 0 .9rem; padding-left:1.15rem}
+  li{margin:.3rem 0}
+  code{
+    font-family:"IBM Plex Mono",monospace; font-size:.86em;
+    background:var(--chip); color:var(--ink); padding:.12em .38em; border-radius:3px;
+  }
+  .scopes{overflow-x:auto; margin:1rem 0 1.25rem}
+  table{border-collapse:collapse; width:100%; font-size:.9rem; min-width:34rem}
+  th,td{text-align:left; padding:.6rem .8rem; border-bottom:1px solid var(--rule); vertical-align:top}
+  th{
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--muted); font-weight:500;
+    border-bottom:1.5px solid var(--ink);
+  }
+  td:first-child{font-family:"IBM Plex Mono",monospace; color:var(--ink); white-space:nowrap}
+  .note{
+    background:var(--panel); border-left:3px solid var(--accent);
+    padding:1rem 1.1rem; margin:1.5rem 0; font-size:.94rem;
+  }
+  .note strong{color:var(--ink)}
+  .divider{
+    margin:4rem 0 2.5rem; border:0; border-top:1px solid var(--rule);
+    position:relative; text-align:center;
+  }
+  .divider span{
+    position:relative; top:-.78rem; background:var(--ground); padding:0 1rem;
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--muted);
+  }
+  footer{
+    margin-top:4rem; padding-top:1.25rem; border-top:1px solid var(--rule);
+    font-size:.85rem; color:var(--muted);
+  }
+  a{color:var(--accent); text-decoration:underline; text-underline-offset:2px}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .todo{color:var(--accent); font-weight:600}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Privacy Policy · 개인정보처리방침</p>
+    <h1>그냥1분 Publishing Tool</h1>
+    <p class="sub">An internal tool that sends our own finished short videos to our own TikTok drafts.</p>
+    <div class="meta">
+      <span>Effective 2026-09-11</span>
+      <span>Scopes: user.info.basic · video.upload</span>
+    </div>
+  </header>
+
+  <h2><span class="n">01</span> What this tool is</h2>
+  <p>
+    The 그냥1분 Publishing Tool is a private, internal script used by our own team to publish
+    short videos we produce in-house. It takes a finished video file, attaches a title and
+    hashtags we prepared in advance, and delivers it to the TikTok drafts (inbox) of the
+    channel owner's own account. A person then opens the TikTok app, reviews the draft, and
+    publishes it.
+  </p>
+  <p>
+    It is not a consumer product. It has no sign-up, no public interface, and no users other
+    than the operators of the channels it posts to.
+  </p>
+
+  <h2><span class="n">02</span> What we access, and why</h2>
+  <div class="scopes">
+    <table>
+      <thead>
+        <tr><th>Permission</th><th>What it gives us</th><th>Why we need it</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>user.info.basic</td>
+          <td>Account identifier (open ID) and display name</td>
+          <td>To confirm the video is being sent to the intended account before uploading</td>
+        </tr>
+        <tr>
+          <td>video.upload</td>
+          <td>Ability to place a video file into the account's drafts</td>
+          <td>To deliver the finished video. Publishing is done by the account owner in the TikTok app</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    We request no other permission. We do not read followers, comments, messages, analytics,
+    or any other account data.
+  </p>
+
+  <h2><span class="n">03</span> What we store</h2>
+  <ul>
+    <li>The TikTok access token and refresh token issued when the account owner authorizes the tool.</li>
+    <li>The account's open ID and display name.</li>
+    <li>The identifier returned for each upload, so we can check whether it arrived.</li>
+  </ul>
+  <p>
+    These are stored in a local configuration file on the operator's own computer. They are
+    not uploaded to any server of ours, because we do not operate a server.
+  </p>
+
+  <h2><span class="n">04</span> What we do not do</h2>
+  <ul>
+    <li>We do not collect information from TikTok viewers or from anyone who is not an operator.</li>
+    <li>We do not sell, rent, or share data with any third party.</li>
+    <li>We do not use TikTok data for advertising, profiling, or training models.</li>
+    <li>We do not run analytics or tracking of any kind.</li>
+  </ul>
+
+  <h2><span class="n">05</span> How long we keep it</h2>
+  <p>
+    Tokens are kept only while the tool is in use for that account. When an account stops
+    using the tool, its tokens are deleted from the configuration file. Upload identifiers are
+    kept as a record for up to 12 months and then removed.
+  </p>
+
+  <h2><span class="n">06</span> Withdrawing access</h2>
+  <p>
+    The account owner can revoke this tool at any time in the TikTok app under
+    <em>Settings and privacy → Security and permissions → Manage app permissions</em>.
+    Revoking immediately stops all access. On request we will also delete the stored tokens
+    for that account; contact us at the address below.
+  </p>
+
+  <h2><span class="n">07</span> Children</h2>
+  <p>
+    The tool is used only by the operators of our own channels, all of whom are adults. It is
+    not directed at children and collects nothing from them.
+  </p>
+
+  <h2><span class="n">08</span> Changes</h2>
+  <p>
+    If what the tool accesses ever changes, this page is updated and the effective date at the
+    top changes with it.
+  </p>
+
+  <h2><span class="n">09</span> Contact</h2>
+  <p>
+    Questions about this policy or a deletion request:
+    <a href="mailto:ferraric.lec16@gmail.com">ferraric.lec16@gmail.com</a>
+  </p>
+
+  <hr class="divider"><span class="divider"></span>
+  <hr class="divider"><span class="divider">한국어</span>
+
+  <h2><span class="n">01</span> 이 도구는 무엇인가</h2>
+  <p>
+    「그냥1분 업로드 도구」는 우리가 직접 만든 짧은 영상을 우리 채널에 올리기 위해 쓰는
+    내부용 스크립트입니다. 완성된 영상 파일에 미리 준비한 제목과 해시태그를 붙여
+    채널 주인의 틱톡 <strong>초안(받은편지함)</strong>으로 보냅니다. 그 뒤 사람이 틱톡 앱에서
+    초안을 확인하고 직접 게시합니다.
+  </p>
+  <p>
+    일반 사용자에게 제공하는 서비스가 아닙니다. 회원가입도 공개 화면도 없고,
+    올리는 채널의 운영자 외에는 사용자가 없습니다.
+  </p>
+
+  <h2><span class="n">02</span> 무엇에 접근하며 왜 필요한가</h2>
+  <ul>
+    <li><code>user.info.basic</code> — 계정 식별자와 표시 이름. <strong>올리기 전에 의도한 계정이 맞는지 확인</strong>하기 위해 씁니다.</li>
+    <li><code>video.upload</code> — 영상 파일을 해당 계정의 초안에 넣는 권한. 게시는 계정 주인이 틱톡 앱에서 합니다.</li>
+  </ul>
+  <p>
+    이 둘 외에는 어떤 권한도 요청하지 않습니다. 팔로워·댓글·메시지·통계 등
+    다른 계정 정보는 읽지 않습니다.
+  </p>
+
+  <h2><span class="n">03</span> 무엇을 저장하는가</h2>
+  <ul>
+    <li>계정 주인이 승인할 때 발급되는 액세스 토큰과 갱신 토큰</li>
+    <li>계정 식별자와 표시 이름</li>
+    <li>업로드마다 돌아오는 식별자 — 실제로 도착했는지 확인하기 위한 기록</li>
+  </ul>
+  <p>
+    이 값들은 운영자 본인 컴퓨터의 설정 파일에만 저장됩니다. 우리는 서버를 운영하지
+    않으므로 어디에도 전송되지 않습니다.
+  </p>
+
+  <h2><span class="n">04</span> 하지 않는 것</h2>
+  <ul>
+    <li>틱톡 시청자나 운영자가 아닌 사람의 정보를 수집하지 않습니다.</li>
+    <li>어떤 제3자에게도 데이터를 판매·대여·공유하지 않습니다.</li>
+    <li>광고·프로파일링·모델 학습에 사용하지 않습니다.</li>
+    <li>어떤 종류의 분석·추적도 하지 않습니다.</li>
+  </ul>
+
+  <h2><span class="n">05</span> 보관 기간</h2>
+  <p>
+    토큰은 해당 계정에 도구를 쓰는 동안만 보관합니다. 사용을 멈추면 설정 파일에서
+    삭제합니다. 업로드 식별자는 기록으로 최대 12개월 보관한 뒤 지웁니다.
+  </p>
+
+  <h2><span class="n">06</span> 접근 권한 철회</h2>
+  <p>
+    계정 주인은 틱톡 앱의 <em>설정 및 개인정보 → 보안 및 권한 → 앱 권한 관리</em>에서
+    언제든 이 도구의 권한을 취소할 수 있습니다. 취소하면 접근이 즉시 중단됩니다.
+    요청하시면 저장된 토큰도 삭제합니다.
+  </p>
+
+  <h2><span class="n">07</span> 아동</h2>
+  <p>
+    이 도구는 우리 채널 운영자만 사용하며 전원 성인입니다. 아동을 대상으로 하지 않고
+    아동으로부터 어떤 정보도 수집하지 않습니다.
+  </p>
+
+  <h2><span class="n">08</span> 변경</h2>
+  <p>
+    접근 범위가 바뀌면 이 페이지를 갱신하고 위쪽 시행일도 함께 바꿉니다.
+  </p>
+
+  <h2><span class="n">09</span> 문의</h2>
+  <p>
+    이 방침에 대한 문의나 삭제 요청:
+    <a href="mailto:ferraric.lec16@gmail.com">ferraric.lec16@gmail.com</a>
+  </p>
+
+  <div class="note">
+    <strong>범위에 대해.</strong> 이 도구는 <code>video.publish</code>(자동 게시) 권한을
+    요청하지 않습니다. 영상은 초안으로만 전달되고, 공개 여부·댓글 허용 등은
+    계정 주인이 틱톡 앱에서 직접 고릅니다.
+  </div>
+
+  <footer>
+    그냥1분 Publishing Tool · Privacy Policy · Effective 2026-09-11
+  </footer>
+</div>
