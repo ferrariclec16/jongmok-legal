@@ -86,10 +86,10 @@
   <header>
     <p class="eyebrow">Privacy Policy · 개인정보처리방침</p>
     <h1>그냥1분 Publishing Tool</h1>
-    <p class="sub">An internal tool that sends our own finished short videos to our own TikTok drafts.</p>
+    <p class="sub">An internal tool that publishes our own finished short videos to our own TikTok account, one operator-confirmed post at a time.</p>
     <div class="meta">
       <span>Effective 2026-09-11</span>
-      <span>Scopes: user.info.basic · video.upload</span>
+      <span>Scopes: user.info.basic · video.publish · video.upload</span>
     </div>
   </header>
 
@@ -97,9 +97,10 @@
   <p>
     The 그냥1분 Publishing Tool is a private, internal script used by our own team to publish
     short videos we produce in-house. It takes a finished video file, attaches a title and
-    hashtags we prepared in advance, and delivers it to the TikTok drafts (inbox) of the
-    channel owner's own account. A person then opens the TikTok app, reviews the draft, and
-    publishes it.
+    hashtags we prepared in advance, and shows the operator a confirmation screen with the
+    target account name, a video preview and the full caption. On that screen the operator
+    chooses the privacy level (nothing is pre-selected) and the interaction settings, then
+    presses Post. Only then is the video sent to TikTok.
   </p>
   <p>
     It is not a consumer product. It has no sign-up, no public interface, and no users other
@@ -116,12 +117,17 @@
         <tr>
           <td>user.info.basic</td>
           <td>Account identifier (open ID) and display name</td>
-          <td>To confirm the video is being sent to the intended account before uploading</td>
+          <td>To show the operator, on the confirmation screen, which account will receive the post — so the wrong account cannot be posted to</td>
+        </tr>
+        <tr>
+          <td>video.publish</td>
+          <td>Ability to publish a video with a caption and the chosen settings</td>
+          <td>To publish the video after the operator has confirmed it. Used once per post, never on a schedule and never unattended</td>
         </tr>
         <tr>
           <td>video.upload</td>
           <td>Ability to place a video file into the account's drafts</td>
-          <td>To deliver the finished video. Publishing is done by the account owner in the TikTok app</td>
+          <td>Fallback path, when the operator prefers to finish the post inside the TikTok app instead</td>
         </tr>
       </tbody>
     </table>
@@ -190,8 +196,9 @@
   <p>
     「그냥1분 업로드 도구」는 우리가 직접 만든 짧은 영상을 우리 채널에 올리기 위해 쓰는
     내부용 스크립트입니다. 완성된 영상 파일에 미리 준비한 제목과 해시태그를 붙여
-    채널 주인의 틱톡 <strong>초안(받은편지함)</strong>으로 보냅니다. 그 뒤 사람이 틱톡 앱에서
-    초안을 확인하고 직접 게시합니다.
+    운영자에게 <strong>확인 화면</strong>을 띄웁니다. 화면에는 대상 계정 이름, 영상 미리보기,
+    게시될 캡션 전문이 나옵니다. 운영자가 공개 범위(기본값 없음)와 상호작용 설정을 직접 고르고
+    「게시」를 누른 뒤에야 영상이 틱톡으로 전송됩니다.
   </p>
   <p>
     일반 사용자에게 제공하는 서비스가 아닙니다. 회원가입도 공개 화면도 없고,
@@ -200,11 +207,12 @@
 
   <h2><span class="n">02</span> 무엇에 접근하며 왜 필요한가</h2>
   <ul>
-    <li><code>user.info.basic</code> — 계정 식별자와 표시 이름. <strong>올리기 전에 의도한 계정이 맞는지 확인</strong>하기 위해 씁니다.</li>
-    <li><code>video.upload</code> — 영상 파일을 해당 계정의 초안에 넣는 권한. 게시는 계정 주인이 틱톡 앱에서 합니다.</li>
+    <li><code>user.info.basic</code> — 계정 식별자와 표시 이름. <strong>확인 화면에 어느 계정에 올라가는지 보여주기 위해</strong> 씁니다. 다른 계정에 잘못 올리는 사고를 막는 장치입니다.</li>
+    <li><code>video.publish</code> — 운영자가 확인한 설정 그대로 영상을 게시하는 권한. 게시 한 번에 한 번만 쓰이며, 예약이나 무인 실행은 없습니다.</li>
+    <li><code>video.upload</code> — 영상 파일을 해당 계정의 초안에 넣는 권한. 운영자가 틱톡 앱에서 마무리하고 싶을 때 쓰는 대체 경로입니다.</li>
   </ul>
   <p>
-    이 둘 외에는 어떤 권한도 요청하지 않습니다. 팔로워·댓글·메시지·통계 등
+    이 셋 외에는 어떤 권한도 요청하지 않습니다. 팔로워·댓글·메시지·통계 등
     다른 계정 정보는 읽지 않습니다.
   </p>
 
@@ -258,9 +266,9 @@
   </p>
 
   <div class="note">
-    <strong>범위에 대해.</strong> 이 도구는 <code>video.publish</code>(자동 게시) 권한을
-    요청하지 않습니다. 영상은 초안으로만 전달되고, 공개 여부·댓글 허용 등은
-    계정 주인이 틱톡 앱에서 직접 고릅니다.
+    <strong>범위에 대해.</strong> 이 도구에는 예약 기능도 무인 모드도 없습니다.
+    <code>video.publish</code> 를 쓰지만, 영상 한 편마다 운영자가 확인 화면에서
+    공개 범위·댓글 허용을 직접 고르고 「게시」를 눌러야 전송이 시작됩니다.
   </div>
 
   <footer>

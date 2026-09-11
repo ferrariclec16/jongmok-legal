@@ -77,7 +77,7 @@
   <header>
     <p class="eyebrow">Terms of Service · 이용약관</p>
     <h1>그냥1분 Publishing Tool</h1>
-    <p class="sub">Terms for the internal tool that delivers our finished videos to our own TikTok drafts.</p>
+    <p class="sub">Terms for the internal tool that publishes our finished videos to our own TikTok account.</p>
     <div class="meta">
       <span>Effective 2026-09-11</span>
       <span>Internal use only</span>
@@ -94,14 +94,17 @@
   <h2><span class="n">02</span> What the Tool does</h2>
   <p>
     The Tool takes a video file we produced, attaches a title and hashtags we prepared, and
-    delivers it to the authorized account's TikTok drafts. The account owner then reviews the
-    draft in the TikTok app and decides whether and how to publish it — including its
-    visibility, comment settings, and any commercial-content disclosure.
+    shows the operator a confirmation screen: the name of the TikTok account that will receive
+    the post, a preview of the video, and the full caption. On that screen the operator chooses
+    the privacy level (no value is pre-selected), decides whether comments, Duet and Stitch are
+    allowed (all start off), and declares commercial content if any (off by default). The file
+    is sent to TikTok only after the operator presses Post.
   </p>
   <div class="note">
-    <strong>The Tool never publishes on its own.</strong> It requests only
-    <code>user.info.basic</code> and <code>video.upload</code>. It does not request
-    <code>video.publish</code>, so it cannot post directly to a public feed.
+    <strong>The Tool never publishes unattended.</strong> It requests
+    <code>user.info.basic</code>, <code>video.publish</code> and <code>video.upload</code>.
+    It has no scheduler and no unattended mode: every post needs a person on the confirmation
+    screen to choose the settings and press Post.
   </div>
 
   <h2><span class="n">03</span> Authorization</h2>
@@ -114,10 +117,10 @@
 
   <h2><span class="n">04</span> Content responsibility</h2>
   <p>
-    All videos delivered by the Tool are produced by us and remain our responsibility. We are
+    All videos published by the Tool are produced by us and remain our responsibility. We are
     responsible for making sure each video complies with TikTok's Community Guidelines and
-    Terms of Service before it is published. Because publishing is a human step, the person who
-    presses publish is the one who confirms the content is ready.
+    Terms of Service before it is published. The operator who presses Post on the confirmation
+    screen is the person confirming the content is ready.
   </p>
 
   <h2><span class="n">05</span> Acceptable use</h2>
@@ -165,14 +168,17 @@
 
   <h2><span class="n">02</span> 도구가 하는 일</h2>
   <p>
-    우리가 제작한 영상 파일에 미리 준비한 제목과 해시태그를 붙여, 승인된 계정의 틱톡
-    <strong>초안</strong>으로 전달합니다. 그 뒤 계정 주인이 틱톡 앱에서 초안을 확인하고
-    공개 여부·댓글 설정·상업 콘텐츠 표시 등을 직접 정해 게시합니다.
+    우리가 제작한 영상 파일에 미리 준비한 제목과 해시태그를 붙여 <strong>확인 화면</strong>을
+    띄웁니다. 화면에는 어느 틱톡 계정에 올라가는지, 영상 미리보기, 게시될 캡션 전문이 나옵니다.
+    운영자는 그 화면에서 공개 범위를 직접 고르고(기본값 없음), 댓글·듀엣·이어찍기 허용 여부를
+    정하고(전부 꺼진 상태로 시작), 상업적 콘텐츠면 표시를 켭니다(기본 꺼짐).
+    <strong>운영자가 「게시」를 누른 뒤에야</strong> 영상이 틱톡으로 전송됩니다.
   </p>
   <div class="note">
-    <strong>도구가 스스로 게시하지 않습니다.</strong> 요청하는 권한은
-    <code>user.info.basic</code>과 <code>video.upload</code> 둘뿐입니다.
-    <code>video.publish</code>는 요청하지 않으므로 공개 피드에 직접 올릴 수 없습니다.
+    <strong>사람 없이 게시하지 않습니다.</strong> 요청하는 권한은
+    <code>user.info.basic</code>, <code>video.publish</code>, <code>video.upload</code> 입니다.
+    예약 기능도, 무인 모드도 없습니다. 영상 한 편마다 사람이 확인 화면에서 설정을 고르고
+    「게시」를 눌러야 합니다.
   </div>
 
   <h2><span class="n">03</span> 승인</h2>
@@ -184,9 +190,9 @@
 
   <h2><span class="n">04</span> 콘텐츠 책임</h2>
   <p>
-    도구가 전달하는 영상은 모두 우리가 제작한 것이며 책임도 우리에게 있습니다. 각 영상이
+    도구가 게시하는 영상은 모두 우리가 제작한 것이며 책임도 우리에게 있습니다. 각 영상이
     틱톡 커뮤니티 가이드라인과 이용약관을 지키는지 게시 전에 확인할 책임은 우리에게 있습니다.
-    게시는 사람이 누르는 단계이므로, 게시를 누르는 사람이 그 영상이 준비됐음을 확인합니다.
+    확인 화면에서 「게시」를 누르는 운영자가 그 영상이 준비됐음을 확인하는 사람입니다.
   </p>
 
   <h2><span class="n">05</span> 허용되는 사용</h2>

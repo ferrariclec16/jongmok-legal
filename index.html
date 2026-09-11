@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>그냥1분 Publishing Tool</title>
-<meta name="description" content="An internal tool that delivers our own finished short videos to our own TikTok drafts for a person to review and publish.">
+<meta name="description" content="An internal tool that publishes our own finished short videos to our own TikTok account. The operator reviews and confirms every post on a confirmation screen before anything is sent.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root{
@@ -89,18 +89,22 @@
   <p class="eyebrow">Internal publishing tool</p>
   <h1>그냥1분 Publishing Tool</h1>
   <p class="lede">
-    A private script our team uses to deliver the short videos we produce to our own
-    TikTok drafts. Every post is reviewed and published by a person in the TikTok app.
+    A private tool our team uses to publish the short videos we produce to our own
+    TikTok account. Nothing is sent to TikTok until the operator has reviewed the video and
+    caption on a confirmation screen, chosen the privacy level, and pressed Post.
   </p>
 
   <h2>How it works</h2>
   <ul class="steps">
     <li><span class="n">01</span><span><strong>We finish a video.</strong>
       Script, narration, footage and captions are produced by our team, not by this tool.</span></li>
-    <li><span class="n">02</span><span><strong>The tool attaches the title and hashtags we wrote</strong>
-      and sends the file to the authorized account's TikTok drafts.</span></li>
-    <li><span class="n">03</span><span><strong>A person opens the TikTok app,</strong>
-      reviews the draft, chooses visibility and comment settings, and publishes it.</span></li>
+    <li><span class="n">02</span><span><strong>The tool opens a confirmation screen.</strong>
+      It shows which TikTok account will receive the post, a preview of the video, and the exact
+      caption and hashtags we wrote. Privacy level has no default — the operator must choose it.
+      Comment, Duet and Stitch start switched off. Commercial-content disclosure starts switched off.</span></li>
+    <li><span class="n">03</span><span><strong>The operator presses Post.</strong>
+      Only then is the file sent to TikTok, with the settings that operator just chose.
+      Nothing is uploaded before that press.</span></li>
   </ul>
 
   <h2>Permissions it uses</h2>
@@ -108,15 +112,17 @@
     <table>
       <thead><tr><th>Scope</th><th>Used for</th></tr></thead>
       <tbody>
-        <tr><td>user.info.basic</td><td>Confirming the video is going to the intended account before upload</td></tr>
-        <tr><td>video.upload</td><td>Placing the finished file into that account's drafts</td></tr>
+        <tr><td>user.info.basic</td><td>Showing the operator which account will receive the post, so the wrong account cannot be posted to</td></tr>
+        <tr><td>video.publish</td><td>Publishing the finished video with the caption and settings the operator confirmed on the screen</td></tr>
+        <tr><td>video.upload</td><td>Fallback path: sending the file to the account's own drafts when the operator wants to finish in the TikTok app instead</td></tr>
       </tbody>
     </table>
   </div>
   <div class="note">
-    <strong>It does not request <code>video.publish</code>.</strong>
-    The tool cannot post to a public feed on its own — publishing is always a human step
-    taken inside the TikTok app.
+    <strong>It never posts unattended.</strong>
+    The tool has no scheduler and no unattended mode. Every single post requires the operator
+    to be present, choose a privacy level, and press Post on the confirmation screen. There is
+    no bulk posting and no posting to accounts other than our own.
   </div>
 
   <h2>Who uses it</h2>
